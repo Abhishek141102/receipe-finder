@@ -8,17 +8,15 @@ function RecipeCard({ recipe }) {
 
   const toggleFavorite = () => {
     const current = JSON.parse(localStorage.getItem("favorites") || "[]");
-    if (current.some((f) => f.idMeal === recipe.idMeal)) {
-      const next = current.filter((f) => f.idMeal !== recipe.idMeal);
-      localStorage.setItem("favorites", JSON.stringify(next));
-      alert("Removed from favorites");
-      window.location.reload();
-      return;
-    }
-    current.push(recipe);
-    localStorage.setItem("favorites", JSON.stringify(current));
-    alert("Added to favorites");
-    window.location.reload();
+    const isAlreadyFavorite = current.some((f) => f.idMeal === recipe.idMeal);
+
+    const next = isAlreadyFavorite
+      ? current.filter((f) => f.idMeal !== recipe.idMeal)
+      : [...current, recipe];
+
+    localStorage.setItem("favorites", JSON.stringify(next));
+    window.dispatchEvent(new Event("favoritesUpdated"));
+    alert(isAlreadyFavorite ? "Removed from favorites" : "Added to favorites");
   };
 
   return (

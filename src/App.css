@@ -247,6 +247,28 @@ body {
   padding: 20px;
 }
 
+.favorites-title {
+  margin: 0 0 20px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+}
+
+.favorites-empty {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f3f3f3;
+  border-radius: 12px;
+  padding: 30px 20px;
+}
+
+.favorites-message {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  line-height: 1.5;
+  color: #333;
+}
 
 .loader {
   text-align: center;
@@ -289,6 +311,19 @@ body {
 
   .btn {
     padding: 9px 12px;
+  }
+
+  .favorites {
+    padding: 14px;
+  }
+
+  .favorites-empty {
+    min-height: 300px;
+    padding: 24px 16px;
+  }
+
+  .favorites-title {
+    margin-bottom: 14px;
   }
 
   .details {
