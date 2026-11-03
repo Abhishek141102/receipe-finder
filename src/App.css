@@ -198,6 +198,15 @@ body {
   padding: 20px;
 }
 
+.details .back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  margin: 0 0 18px;
+  box-shadow: 0 4px 10px rgba(255, 112, 67, 0.2);
+}
+
 .details-grid {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -280,6 +289,16 @@ body {
 
   .btn {
     padding: 9px 12px;
+  }
+
+  .details {
+    padding: 14px;
+  }
+
+  .details .back {
+    min-width: 110px;
+    margin: 0 0 14px;
+    width: fit-content;
   }
 
   .recipe-list {
